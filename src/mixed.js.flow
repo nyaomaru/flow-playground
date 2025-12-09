@@ -1,6 +1,8 @@
-//@flow
+// @flow
 function numberOrString(x: mixed) {
+  // ❌
   // x + 1; //← error
+  // ❌
   // x.name; //← error
 
   if (typeof x === 'number') {

@@ -9,7 +9,7 @@ module.exports = [
     ignores: ['node_modules/**', 'dist/**'],
   },
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,flow,js.flow}'],
     languageOptions: {
       parser: hermes,
       parserOptions: {

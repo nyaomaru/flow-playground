@@ -1,0 +1,7 @@
+// @flow
+function greet(name: ?string) {
+  if (name != null) {
+    return 'Hello, ' + name.toUpperCase();
+  }
+  return 'Hello!';
+}

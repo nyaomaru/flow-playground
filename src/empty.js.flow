@@ -1,0 +1,35 @@
+// @flow
+function foo(x: empty) {
+  return x;
+}
+
+// ❌
+// foo(1); // Error: 1 ~> empty
+
+function bar(x: string) {
+  if (typeof x === 'number') {
+    return x;
+  }
+}
+
+// ❌
+// function bad(x: string): empty {
+//   return x; // Error: string ~> empty
+// }
+
+function throwError(message: string): empty {
+  throw new Error(message); // 戻り値がない
+}
+
+function voice(value: 'cat' | 'dog'): string {
+  switch (value) {
+    case 'cat':
+      return 'meow';
+    case 'dog':
+      return 'bow';
+    default:
+      // Flow のキャスト構文を使って、
+      // 「ここに来る value は empty（＝存在しない）はずやで」と教えてあげる
+      return (value: empty);
+  }
+}
