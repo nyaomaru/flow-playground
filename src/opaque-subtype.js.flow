@@ -2,7 +2,7 @@
 import type { NewUserId } from './new-user-id.js.flow';
 
 function getNewUserIdGood(userId: NewUserId): string {
-  return 'OK:' + userId; // ⭕️ UserId is a subtype of string, so it can be treated as a string
+  return 'OK:' + userId; // ⭕️ NewUserId is a subtype of string, so it can be treated as a string
 }
 
 // ❌
