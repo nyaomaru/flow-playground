@@ -28,8 +28,8 @@ function voice(value: 'cat' | 'dog'): string {
     case 'dog':
       return 'bow';
     default:
-      // Flow のキャスト構文を使って、
-      // 「ここに来る value は empty（＝存在しない）はずやで」と教えてあげる
+      // Using Flow's cast syntax to tell it that
+      // the value here should be empty (i.e., unreachable)
       return (value: empty);
   }
 }
