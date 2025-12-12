@@ -1,0 +1,10 @@
+// @flow
+type User = {
+  name: string,
+  ...
+};
+
+const newUser: User = {
+  name: 'nyaomaru',
+  age: 123, // OK
+};

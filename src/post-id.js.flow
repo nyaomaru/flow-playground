@@ -1,0 +1,6 @@
+// @flow
+export opaque type PostId = string;
+
+export function makePostId(x: string): PostId {
+  return x;
+}

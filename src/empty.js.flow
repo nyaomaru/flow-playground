@@ -1,0 +1,35 @@
+// @flow
+function foo(x: empty) {
+  return x;
+}
+
+// ❌
+// foo(1); // Error: 1 ~> empty
+
+function bar(x: string) {
+  if (typeof x === 'number') {
+    return x;
+  }
+}
+
+// ❌
+// function bad(x: string): empty {
+//   return x; // Error: string ~> empty
+// }
+
+function throwError(message: string): empty {
+  throw new Error(message); // no return value
+}
+
+function voice(value: 'cat' | 'dog'): string {
+  switch (value) {
+    case 'cat':
+      return 'meow';
+    case 'dog':
+      return 'bow';
+    default:
+      // Using Flow's cast syntax to tell it that
+      // the value here should be empty (i.e., unreachable)
+      return (value: empty);
+  }
+}

@@ -1,0 +1,12 @@
+// @flow
+import { makeUserId, type UserId } from './user-id.js.flow';
+import { makePostId, type PostId } from './post-id.js.flow';
+
+const user: UserId = makeUserId('aaa'); // OK
+const post: PostId = makePostId('bbb'); // OK
+
+// ❌
+// const bad: UserId = 'aaa'; // string → UserId is not allowed
+
+// ❌
+// const alsoBad: PostId = user; // UserId → PostId is not allowed

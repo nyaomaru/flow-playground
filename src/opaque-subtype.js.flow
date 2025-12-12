@@ -1,0 +1,11 @@
+// @flow
+import type { NewUserId } from './new-user-id.js.flow';
+
+function getNewUserIdGood(userId: NewUserId): string {
+  return 'OK:' + userId; // ⭕️ NewUserId is a subtype of string, so it can be treated as a string
+}
+
+// ❌
+// function getNewUserIdBad(userId: string): NewUserId {
+//   return userId; // string is not a subtype of NewUserId
+// }

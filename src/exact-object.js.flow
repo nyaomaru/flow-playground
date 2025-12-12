@@ -1,0 +1,16 @@
+// @flow
+type User = {
+  name: string,
+};
+
+// ❌
+// const newUser: User = {
+//   name: 'nyaomaru',
+//   age: 123, // NG: extra property
+// };
+
+function f(obj: { foo: string }) {}
+const badObject = { foo: 'nyaomaru', age: 123 };
+
+// ❌
+// f(badObject); // This also causes an error

@@ -1,0 +1,6 @@
+// @flow
+export opaque type UserId = string;
+
+export function makeUserId(x: string): UserId {
+  return x;
+}
