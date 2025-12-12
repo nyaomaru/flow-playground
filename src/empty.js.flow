@@ -18,7 +18,7 @@ function bar(x: string) {
 // }
 
 function throwError(message: string): empty {
-  throw new Error(message); // 戻り値がない
+  throw new Error(message); // no return value
 }
 
 function voice(value: 'cat' | 'dog'): string {
